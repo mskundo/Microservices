@@ -1,0 +1,10 @@
+package com.order.service;
+
+
+public class OrderControllerTest {
+
+
+	public void orderTest() {
+		
+	}
+}

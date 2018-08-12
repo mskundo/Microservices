@@ -1,0 +1,24 @@
+package com.customer.service;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@WebMvcTest(CustomerController.class)
+@SpringBootTest
+public class CustomersApplicationTests {
+
+	@Test
+	public void customerTest() {
+		Customer customer = new Customer();
+		customer.setAddressLine1("qwerty road");
+		customer.setAddressLine2("polo");
+		customer.setAge(23);
+		customer.setPostCode(123654);
+		
+	}
+
+}

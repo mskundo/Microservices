@@ -1,0 +1,16 @@
+---
+memory: 1GB
+instances: 1
+applications:
+- name: customers-service
+  path: target/customers-0.0.1-SNAPSHOT.war
+  routes:
+    - route: customers-service-demo.cfapps.io
+  services:
+  - customer-database
+# - name: movie-fun-app
+#   path: applications/movie-fun-app/build/libs/movie-fun-app-1.1.0-SNAPSHOT.war
+
+  env:
+    # ALBUMS_URL: http://album-service-selva.cfapps.io/albums
+    CUSTOMER_URL: http://customers-service-demo.cfapps.io/customers

@@ -1,0 +1,9 @@
+package com.order.service;
+
+public class Order {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column
+	private Long id;
+}

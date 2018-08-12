@@ -1,0 +1,10 @@
+package com.customer.service;
+
+public class Customer {
+	private Long id;
+	private String addressLine1;
+	private String addressLine2;
+	private Long postCode;
+	private Long age;
+
+}

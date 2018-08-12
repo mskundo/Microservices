@@ -1,0 +1,13 @@
+---
+memory: 1GB
+instances: 1
+applications:
+- name: customer-service
+  path: target/customer-0.0.1-SNAPSHOT.war
+  routes:
+    - route: customers-service-madhu.cfapps.io
+  services:
+  - customer-database
+
+  env:
+    CUSTOMER_URL: http://customer-service-madhu.cfapps.io/customers

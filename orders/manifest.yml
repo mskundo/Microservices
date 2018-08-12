@@ -1,0 +1,12 @@
+---
+memory: 1GB
+instances: 1
+applications:
+- name: order-service
+  path: target/orders-0.0.1-SNAPSHOT.war
+  routes:
+    - route: order-service-madhu.cfapps.io
+  services:
+  - order-database
+  env:
+    CUSTOMER_URL: http://order-service-madhu.cfapps.io/orders

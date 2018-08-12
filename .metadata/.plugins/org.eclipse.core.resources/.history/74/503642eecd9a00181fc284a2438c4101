@@ -1,0 +1,20 @@
+package com.customer.service;
+
+import org.apache.log4j.Logger;
+
+@RestController
+@RequestMapping("/customers")
+public class CustomerController {
+	private static final Logger LOGGER = Logger.getLogger(CustomerController.class);
+	
+	@Autowired
+	private CustomerService customerService;
+	
+	public void addCustomer(@RequestBody Customer customer) {
+		this.customerService.addCustomer(customer);
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,53 @@
+package com.customer.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class CustomersApplicationTests {
+
+	@Mock
+	private CustomerRepository customerRepository;
+	
+	@InjectMocks
+	private CustomerController customerController;
+	
+	@Before
+	public void setup(){
+		MockitoAnnotations.initMocks(this);
+	}
+	
+	@Test
+	public void testGetAllToDo(){
+		List<Customer> customerList = new ArrayList<Customer>();
+		toDoList.add(new ToDo(1,"Todo Sample 1",true));
+		toDoList.add(new ToDo(2,"Todo Sample 2",true));
+		toDoList.add(new ToDo(3,"Todo Sample 3",false));
+		when(toDoRepository.findAll()).thenReturn(toDoList);
+		
+		List<ToDo> result = toDoService.getAllToDo();
+		assertEquals(3, result.size());
+	}
+	
+
+}

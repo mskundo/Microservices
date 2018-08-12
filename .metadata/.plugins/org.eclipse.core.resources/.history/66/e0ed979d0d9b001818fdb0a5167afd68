@@ -1,0 +1,11 @@
+package com.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.WebApplicationContext;
+
+public class TestWebApp extends OrdersApplicationTests{
+	
+	@Autowired
+	private WebApplicationContext webApplicationContext;
+
+}

@@ -1,0 +1,14 @@
+package com.order.service;
+
+@RestController
+@RequestMapping=("/orders")
+public class OrderController {
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	public List<Orders> getOrders(@PathVariable Long customerId){
+		orderRepository.findAllById(customerId);
+	}
+
+}
